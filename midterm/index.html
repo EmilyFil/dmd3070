@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designing for Everyone</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#importance">Importance</a>
+    <a href="#try">Accessibility</a>
+    <a href="#support">Support</a>
+    
+  </nav>
+
+  <main id="main">
+
+    <section class="hero">
+      <h1>Designing for Everyone</h1>
+      <p>How CSS can adapt to anyone, for everyone.</p>
+    </section>
+
+    <section id="about">
+      <h2>What Is Accessibility in CSS?</h2>
+      <p>
+        Accessibility in CSS allows websites to respond to user preferences. Features like 
+        <strong><code>prefers-color-scheme</code></strong> and <strong><code>prefers-reduced-motion</code></strong> ensure that designs adapt automatically. This creates inclusive digital experiences for people with motion sensitivity, visual impairments, or cognitive differences. By using these features, we can make the web more welcoming and usable for everyone, regardless of their abilities or preferences!
+      </p>
+    </section>
+
+
+   <section id="importance">
+      <h2>Why Accessibility Matters</h2>
+      <p>
+        Designing accessible websites ensures that everyone can use the web, regardless of their abilities. 
+        Many people rely on assistive technologies such as screen readers, keyboard navigation, or reduced motion settings to browse comfortably.
+      </p>
+
+      <p>
+       When designers prioritize accessibility, they create inclusive digital spaces where more people can learn, explore, 
+        and interact online. Accessibility is a way to make the internet welcoming and usable for everyone.
+      </p>
+    </section>
+
+ <section id="try">
+  <h2>Accessibility Features</h2>
+  <p>Interact with accessibility features and see how they help users:</p>
+
+  <div class="demo-section">
+    <h3>Dark Mode</h3>
+    <p>
+    The  <strong><code>prefers-color-scheme</code></strong>  CSS media query detects whether your system is set to dark or light mode.
+    This allows websites to automatically adjust colors for better readability and comfort without needing a toggle.
+  </p>
+  </div>
+
+  <div class="demo-section">
+    <h3>Reduced Motion</h3>
+    <p>
+      If your system has "Reduce Motion" enabled, animations (like pulsing words) stop. 
+      This avoids triggering physical discomforts like motion sickness, vertigo, or seizures in users with motion sensitivities or vestibular disorders. <br> <br>To test this, use DevTools and open the command bar, then type "prefers-reduced-motion: reduce" and see the pulsing animation stop!
+    </p>
+    <div class="card-demo"> Pulsing animation stops with reduced motion</div>
+    <p>Try this CSS to disable animations when the user prefers reduced motion:</p>
+    <pre><code>@media (prefers-reduced-motion: reduce) {
+      .card-demo { animation: none !important; }
+    }</code></pre>
+  </div>
+
+  <div class="demo-section">
+    <h3>Accessible Focus</h3>
+    <p>
+      Keyboard users can see exactly which element is selected using the <strong><code>:focus-visible</code></strong> outline.
+      This helps people who can't use a mouse or rely on keyboard navigation. <br> <br>To use it, simply tab through the page and see the focus styles in action.
+    </p>
+    <p> <button>Try keyboard focus</button> → use the TAB key to highlight this button!</p>
+  </div>
+
+  <div class="demo-section">
+    <h3>Color Contrast</h3>
+    <p>
+      Good contrast improves readability for everyone, especially users with low vision or color blindness.
+    </p>
+
+    <ul>
+      <li>Avoid gray text on gray backgrounds.</li>
+      <li>Use dark text on light backgrounds or light text on dark backgrounds.</li>
+    </ul>
+
+    <div class="bad-contrast">Poor contrast</div>
+    <div class="good-contrast">Good contrast</div>
+  </div>
+</section>
+
+
+    <section id="support">
+      <h2>Browser Support</h2>
+      <p>
+        Accessibility features in CSS are widely supported across modern browsers such as Chome, Safari, and Firefox , making it easier for developers to create inclusive web experiences. 
+        However, support can vary based on the specific feature and browser version which may require a fallback.
+      </p>
+      <ul>
+        <li><strong>prefers-color-scheme</strong> → Supported in Chrome, Safari, Firefox, and Edge.</li>
+        <li><strong>prefers-reduced-motion</strong> → Widely supported and used for motion accessibility.</li>
+        <li><strong>:focus-visible</strong> → Supported in modern browsers and improves keyboard navigation visibility.</li>
+      </ul>
+
+    <h3>How to Implement Accessibility in CSS</h3>
+  <ol>
+    <li><strong>Use semantic HTML:</strong> Structure your page with meaningful element because it provides essential meaning and structure that assistive technologies rely on.</li>
+    <li><strong>Add accessible focus states:</strong> Use <code>:focus-visible</code> to highlight interactive elements for keyboard users.</li>
+    <li><strong>Use media queries for user preferences:</strong> Include <code>prefers-color-scheme</code> for dark/light mode and <code>prefers-reduced-motion</code> for motion-sensitive users.</li>
+    <li><strong>Test using tools:</strong> Check accessibility using DevTools, and screen readers to ensure all users can navigate your site. </li>
+  </ol>
+    </section>
+
+   
+  </main>
+
+  <footer>
+    Built using MDN Web Docs, W3C Guidelines, and caniuse.com
+  </footer>
+
+</body>
+</html>
